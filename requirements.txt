@@ -1,0 +1,38 @@
+# dependencies
+
+beautifulsoup4
+colorama
+md2pdf
+python-dotenv
+pyyaml
+uvicorn
+pydantic
+fastapi
+python-multipart
+markdown
+langchain
+langchain_community
+langchain-openai
+tiktoken
+arxiv
+PyMuPDF
+requests
+jinja2
+aiofiles
+mistune
+python-docx
+htmldocx
+lxml_html_clean
+websockets
+unstructured
+json_repair
+json5
+loguru
+langgraph
+gpt-researcher
+flask
+faiss-cpu
+langchain_huggingface
+# uncomment for testing
+# pytest
+# pytest-asyncio

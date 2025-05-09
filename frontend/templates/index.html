@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Researcher</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #output {
+            max-height: 500px;
+            overflow-y: auto;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+        }
+        .log-entry {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .agent {
+            font-weight: 600;
+            color: #1f2937;
+            display: inline-block;
+            min-width: 120px;
+        }
+        .agent-system {
+            color: #4b5563;
+        }
+        .agent-error {
+            color: #dc2626;
+        }
+        .agent-search {
+            color: #2563eb;
+        }
+        .agent-scraper {
+            color: #7c3aed;
+        }
+        .agent-researcher {
+            color: #047857;
+        }
+        .agent-writer {
+            color: #9d174d;
+        }
+        .settings-modal {
+            transition: opacity 0.3s ease;
+        }
+        textarea, input, select {
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+        }
+        textarea:focus, input:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        body.dark {
+            background-color: #111827;
+            color: #d1d5db;
+        }
+        .dark .bg-white {
+            background-color: #1f2937;
+        }
+        .dark .bg-gray-100 {
+            background-color: #111827;
+        }
+        .dark .text-gray-800 {
+            color: #d1d5db;
+        }
+        .dark .border-gray-200 {
+            border-color: #4b5563;
+        }
+        .dark #output {
+            background-color: #1f2937;
+            border-color: #4b5563;
+        }
+        .dark .log-entry {
+            border-color: #374151;
+        }
+        .dark .agent-system {
+            color: #9ca3af;
+        }
+        .dark .agent-error {
+            color: #ef4444;
+        }
+        .dark .agent-search {
+            color: #3b82f6;
+        }
+        .dark .agent-scraper {
+            color: #8b5cf6;
+        }
+        .dark .agent-researcher {
+            color: #10b981;
+        }
+        .dark .agent-writer {
+            color: #ec4899;
+        }
+        #downloadSection {
+            display: none;
+        }
+        #chatSection {
+            display: none;
+        }
+        #researchForm button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-gray-800">AI Researcher</h1>
+            <div>
+                <button id="logsToggle" class="text-gray-600 hover:text-gray-800 focus:outline-none mr-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                </button>
+                <button id="settingsToggle" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37zM15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden settings-modal">
+            <div class="bg-white p-6 rounded-lg w-full max-w-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Settings</h2>
+                    <button id="closeSettings" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label for="tone" class="block text-sm font-medium text-gray-700">Tone:</label>
+                        <select id="tone" name="tone" class="mt-1 block w-full">
+                            <option value="objective">Objective</option>
+                            <option value="academic">Academic</option>
+                            <option value="professional">Professional</option>
+                            <option value="casual">Casual</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="max_sections" class="block text-sm font-medium text-gray-700">Max Sections:</label>
+                        <input type="number" id="max_sections" name="max_sections" value="3" min="1" class="mt-1 block w-full">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Output Formats:</label>
+                        <div class="mt-2 flex gap-4">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="format_markdown" name="format_markdown" checked class="mr-2">
+                                <span>Markdown</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="format_pdf" name="format_pdf" checked class="mr-2">
+                                <span>PDF</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="format_docx" name="format_docx" checked class="mr-2">
+                                <span>Word</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="model" class="block text-sm font-medium text-gray-700">Model:</label>
+                        <select id="model" name="model" class="mt-1 block w-full">
+                            <option value="gpt-3.5-turbo" selected>GPT-3.5 Turbo</option>
+                            <option value="gpt-4">GPT-4</option>
+                            <option value="gpt-4-turbo">GPT-4 Turbo</option>
+                            <option value="gpt-4o">GPT-4o</option>
+                            <option value="o1-mini">o1-mini</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="guidelines" class="block text-sm font-medium text-gray-700">Custom Guidelines (one per line):</label>
+                        <textarea id="guidelines" name="guidelines" class="mt-1 block w-full" placeholder="Enter custom guidelines..."></textarea>
+                    </div>
+                    <div class="flex gap-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" id="include_human_feedback" name="include_human_feedback" class="mr-2">
+                            <span>Include Human Feedback</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="follow_guidelines" name="follow_guidelines" checked class="mr-2">
+                            <span>Follow Guidelines</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="verbose" name="verbose" checked class="mr-2">
+                            <span>Verbose Output</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label class="flex items-center">
+                            <input type="checkbox" id="darkMode" name="darkMode" class="mr-2">
+                            <span>Dark Mode</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form id="researchForm" class="bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-4">
+                <label for="query" class="block text-sm font-medium text-gray-700">Research Query:</label>
+                <textarea id="query" name="query" class="mt-1 block w-full" placeholder="Enter your research query..." required></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Start Research</button>
+        </form>
+
+        <div id="output" class="mt-6 p-0 rounded-lg"></div>
+
+        <div id="downloadSection" class="mt-6 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Research Complete</h2>
+            <div id="downloadLinks" class="mb-4"></div>
+            <div class="flex gap-4">
+                <button id="newResearchBtn" class="bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition">
+                    Start New Research
+                </button>
+                <button id="chatWithReportBtn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition">
+                    Chat with Report
+                </button>
+            </div>
+        </div>
+
+        <div id="chatSection" class="mt-6 bg-white p-6 rounded-lg shadow-md">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold text-gray-800">Chat with Report</h2>
+                <button id="closeChatBtn" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="chat-messages" class="bg-gray-50 p-4 rounded-lg max-h-60 overflow-y-auto mb-4"></div>
+            <div class="flex">
+                <input type="text" id="chat-input" class="flex-grow p-2 border border-gray-300 rounded-l-lg" placeholder="Ask a question...">
+                <button id="chat-send" class="bg-blue-600 text-white p-2 rounded-r-lg">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('researchForm');
+        const outputDiv = document.getElementById('output');
+        const settingsModal = document.getElementById('settingsModal');
+        const settingsToggle = document.getElementById('settingsToggle');
+        const closeSettings = document.getElementById('closeSettings');
+        const darkModeCheckbox = document.getElementById('darkMode');
+        const logsToggle = document.getElementById('logsToggle');
+        const chatSend = document.getElementById('chat-send');
+        const chatInput = document.getElementById('chat-input');
+        const submitBtn = document.getElementById('submitBtn');
+        const downloadSection = document.getElementById('downloadSection');
+        const downloadLinks = document.getElementById('downloadLinks');
+        const chatSection = document.getElementById('chatSection');
+        const chatWithReportBtn = document.getElementById('chatWithReportBtn');
+        const closeChatBtn = document.getElementById('closeChatBtn');
+        const newResearchBtn = document.getElementById('newResearchBtn');
+        let socket = null;
+        let taskId = null;
+
+        const emojis = {
+            'SYSTEM': '🖥️',
+            'SEARCH': '🔍',
+            'SCRAPER': '🌐',
+            'RESEARCHER': '🧪',
+            'WRITER': '✍️',
+            'ERROR': '⚠️'
+        };
+
+        const darkModePreference = localStorage.getItem('darkMode') === 'true';
+        darkModeCheckbox.checked = darkModePreference;
+        if (darkModePreference) {
+            document.body.classList.add('dark');
+        }
+        darkModeCheckbox.addEventListener('change', () => {
+            const isDarkMode = darkModeCheckbox.checked;
+            localStorage.setItem('darkMode', isDarkMode);
+            document.body.classList.toggle('dark', isDarkMode);
+        });
+
+        settingsToggle.addEventListener('click', () => {
+            settingsModal.classList.toggle('hidden');
+        });
+
+        closeSettings.addEventListener('click', () => {
+            settingsModal.classList.add('hidden');
+        });
+
+        logsToggle.addEventListener('click', () => {
+            outputDiv.classList.toggle('hidden');
+        });
+
+        chatWithReportBtn.addEventListener('click', () => {
+            downloadSection.style.display = 'none'; // Hide download section
+            chatSection.style.display = 'block';    // Show chat section
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatSection.style.display = 'none';     // Hide chat section
+            downloadSection.style.display = 'block'; // Show download section
+        });
+
+        newResearchBtn.addEventListener('click', () => {
+            location.reload();
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = document.getElementById('query').value;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Researching...";
+            
+            outputDiv.innerHTML = '';
+            addLog('Starting research process...', 'SYSTEM');
+
+            try {
+                const formData = {
+                    query: query,
+                    tone: document.getElementById('tone').value,
+                    max_sections: parseInt(document.getElementById('max_sections').value),
+                    publish_formats: {
+                        markdown: document.getElementById('format_markdown').checked,
+                        pdf: document.getElementById('format_pdf').checked,
+                        docx: document.getElementById('format_docx').checked
+                    },
+                    include_human_feedback: document.getElementById('include_human_feedback').checked,
+                    follow_guidelines: document.getElementById('follow_guidelines').checked,
+                    model: document.getElementById('model').value,
+                    guidelines: document.getElementById('guidelines').value.split('\n').filter(line => line.trim()),
+                    verbose: document.getElementById('verbose').checked
+                };
+
+                const response = await fetch('/start_research', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                taskId = data.task_id;
+                connectWebSocket();
+
+            } catch (error) {
+                addLog(`Error: ${error.message}`, 'ERROR');
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Start Research";
+            }
+        });
+
+        chatSend.addEventListener('click', () => {
+            const query = chatInput.value;
+            if (query && socket) {
+                socket.send(JSON.stringify({type: 'chat_query', query: query}));
+                addChatMessage('User', query);
+                chatInput.value = '';
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                chatSend.click();
+            }
+        });
+
+        function connectWebSocket() {
+            if (socket) socket.close();
+
+            socket = new WebSocket(`ws://localhost:8000/ws/${taskId}`);
+
+            socket.onopen = () => {
+                addLog('Connected to research service', 'SYSTEM');
+            };
+
+            socket.onmessage = (event) => {
+                let data;
+                try {
+                    data = JSON.parse(event.data);
+                } catch {
+                    addLog(`Malformed message: ${event.data}`, 'ERROR');
+                    return;
+                }
+
+                switch(data.type) {
+                    case 'log':
+                        addLog(data.message, data.name);
+                        break;
+
+                    case 'complete':
+                        downloadLinks.innerHTML = '';
+                        Object.entries(data.files).forEach(([ext, url]) => {
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.textContent = `Download ${ext.toUpperCase()}`;
+                            a.target = "_blank";
+                            a.className = 'inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-200 mr-2 mb-2';
+                            downloadLinks.appendChild(a);
+                        });
+                        downloadSection.style.display = 'block'; // Show the section
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Start New Research";
+                        break;
+
+                    case 'error':
+                        addLog(`Error: ${data.message}`, 'ERROR');
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = "Start Research";
+                        break;
+
+                    case 'chat_response':
+                        addChatMessage('Assistant', data.answer);
+                        break;
+
+                    default:
+                        addLog(data.message ?? JSON.stringify(data), data.key || 'TERMINAL');
+                        break;
+                }
+            };
+
+            socket.onclose = () => addLog('Connection closed', 'SYSTEM');
+            socket.onerror = (err) => {
+                addLog(`WebSocket error`, 'ERROR');
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Start Research";
+            };
+        }
+
+        function addLog(message, agent) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            const agentSpan = document.createElement('span');
+            agentSpan.className = `agent agent-${agent.toLowerCase()}`;
+            agentSpan.textContent = `${emojis[agent] || '⚙️'} ${agent}:`;
+            const msgSpan = document.createElement('span');
+            msgSpan.textContent = ` ${message}`;
+            entry.appendChild(agentSpan);
+            entry.appendChild(msgSpan);
+            outputDiv.appendChild(entry);
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+
+        function addChatMessage(sender, message) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'p-2 mb-2 rounded-lg';
+            const sanitizedMessage = message.replace(/</g, '<').replace(/>/g, '>');
+            if (sender === 'User') {
+                messageDiv.className += ' bg-blue-100 text-blue-800 ml-8';
+                messageDiv.innerHTML = `<strong>You:</strong> ${sanitizedMessage}`;
+            } else {
+                messageDiv.className += ' bg-gray-100 text-gray-800 mr-8';
+                messageDiv.innerHTML = `<strong>Assistant:</strong> ${sanitizedMessage}`;
+            }
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
+</body>
+</html>

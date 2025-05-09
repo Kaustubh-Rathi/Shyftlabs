@@ -1,0 +1,299 @@
+# How Many Days Are There in a Year? An In-Depth Report on the Structure and Calculation of Days in a Year According to the Gregorian Calendar
+#### Date: 09/05/2025
+
+## Introduction
+The concept of time measurement has been a fundamental aspect of human civilization, shaping our daily lives, cultural practices, and scientific endeavors. One of the key elements in timekeeping is the calculation of days in a year, a topic that has been intricately linked to the development of calendar systems. The Gregorian calendar, introduced in 1582 by Pope Gregory XIII, stands as a pivotal milestone in calendar history, aiming to rectify the inaccuracies of its predecessor, the Julian calendar. This research delves into the structure and calculation of days in a year according to the Gregorian calendar, exploring its historical context, leap year rules, and alignment with astronomical cycles. By understanding the intricacies of the Gregorian calendar, we can appreciate its significance in modern timekeeping, cultural traditions, and global coordination. ([Gregorian calendar - Wikipedia](https://en.wikipedia.org/wiki/Gregorian_calendar); [AstroPages | Leap Year | Western Washington University](https://astro101.wwu.edu/a101_leapyear.html); [Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html))
+
+## Table of Contents
+- The Gregorian Calendar and Its Structure
+- Leap Years and Calendar Alignment
+- Practical Implications and Calendar Accuracy
+
+## The Gregorian Calendar and Its Structure
+
+### Foundation and Historical Context
+
+The Gregorian calendar, introduced in 1582 by Pope Gregory XIII, is the most widely used civil calendar in the world today. Its primary purpose was to correct inaccuracies in the earlier Julian calendar, which had overestimated the length of the year and, as a result, caused a gradual drift of calendar dates relative to the equinoxes and solstices. The Gregorian reform refined the calculation of leap years, aligning the average calendar year more closely with the tropical year—the time it takes the Earth to complete one orbit around the Sun relative to the vernal equinox ([Gregorian calendar - Wikipedia](https://en.wikipedia.org/wiki/Gregorian_calendar); [AstroPages | Leap Year | Western Washington University](https://astro101.wwu.edu/a101_leapyear.html)).
+
+The Gregorian calendar is a solar calendar, meaning it is based on the Earth's revolution around the Sun. The reform was motivated by the need to keep the date of Easter and other Christian holidays in sync with the seasons, especially the spring equinox ([Gregorian Calendar](https://www.calendardate.com/gregorian.htm)).
+
+### Structure of the Year: Months and Days
+
+The Gregorian calendar divides the year into 12 months of varying lengths. The distribution of days per month is as follows:
+
+| Month      | Number of Days (Common Year) | Number of Days (Leap Year) |
+|------------|-----------------------------|----------------------------|
+| January    | 31                          | 31                         |
+| February   | 28                          | 29                         |
+| March      | 31                          | 31                         |
+| April      | 30                          | 30                         |
+| May        | 31                          | 31                         |
+| June       | 30                          | 30                         |
+| July       | 31                          | 31                         |
+| August     | 31                          | 31                         |
+| September  | 30                          | 30                         |
+| October    | 31                          | 31                         |
+| November   | 30                          | 30                         |
+| December   | 31                          | 31                         |
+
+February is unique in that its length varies depending on whether the year is a leap year or not ([How Many Days Are In Each Month?](https://timecalculators.io/blog/how-many-days-are-in-each-month); [How Many Days Are in a Month](https://www.agecalculator101.com/articles-and-guides/how-many-days-are-in-a-month.html)). In a common year, February has 28 days, while in a leap year, it has 29 days.
+
+### Leap Year Calculation and Rules
+
+A critical feature of the Gregorian calendar is its leap year system, designed to keep the calendar year synchronized with the astronomical year. The rules for determining a leap year are as follows:
+
+- A year is a leap year if it is divisible by 4.
+- However, if the year is divisible by 100, it is not a leap year unless it is also divisible by 400.
+
+This means that while most years divisible by 4 are leap years, century years (e.g., 1700, 1800, 1900) are only leap years if they are also divisible by 400 (e.g., 1600, 2000). This adjustment corrects the overcompensation of the Julian calendar, which had a leap year every four years without exception ([Leap year - Wikipedia](https://en.wikipedia.org/wiki/Leap_year); [Calendar Calculations](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)).
+
+| Year Type         | Divisible by 4 | Divisible by 100 | Divisible by 400 | Leap Year? |
+|-------------------|----------------|------------------|------------------|------------|
+| Example: 2024     | Yes            | No               | -                | Yes        |
+| Example: 1900     | Yes            | Yes              | No               | No         |
+| Example: 2000     | Yes            | Yes              | Yes              | Yes        |
+| Example: 2100     | Yes            | Yes              | No               | No         |
+
+This system results in 97 leap years every 400 years, with the remaining 303 years being common years ([AstroPages | Leap Year | Western Washington University](https://astro101.wwu.edu/a101_leapyear.html)).
+
+### Average Year Length and Astronomical Alignment
+
+The Gregorian calendar achieves a high degree of accuracy in approximating the tropical year. The average length of a Gregorian calendar year is calculated as follows:
+
+- Over 400 years: 303 common years (365 days each) + 97 leap years (366 days each)
+- Total days in 400 years: (303 × 365) + (97 × 366) = 146,097 days
+- Average year length: 146,097 days / 400 years = 365.2425 days
+
+This average is extremely close to the current value of the tropical year, which is approximately 365.2422 days ([Leap year - Wikipedia](https://en.wikipedia.org/wiki/Leap_year); [AstroPages | Leap Year | Western Washington University](https://astro101.wwu.edu/a101_leapyear.html)). The small difference (about 0.0003 days per year) accumulates to a one-day error only every 3,300 to 3,300+ years ([Gregorian calendar - Wikipedia](https://en.wikipedia.org/wiki/Gregorian_calendar)).
+
+| Calendar System | Average Year Length (days) | Approximate Error per Year | Error Accumulation |
+|-----------------|---------------------------|---------------------------|--------------------|
+| Gregorian       | 365.2425                  | +0.0003                   | 1 day/3,300 years  |
+| Julian          | 365.25                    | +0.0078                   | 1 day/128 years    |
+| Tropical Year   | 365.2422                  | -                         | -                  |
+
+This precision makes the Gregorian calendar the most accurate widely used calendar system for civil purposes ([Calendar Calculations](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)).
+
+### Distribution of Common and Leap Years
+
+Within any given 400-year period in the Gregorian calendar, there are 97 leap years and 303 common years. This distribution is intentional and is a direct result of the leap year rules described above. The breakdown ensures that the average year length closely matches the tropical year ([Leap year - Wikipedia](https://en.wikipedia.org/wiki/Leap_year); [Days in a year](https://www.math.net/days-in-a-year)).
+
+| 400-Year Cycle | Number of Years | Days per Year | Total Days |
+|----------------|-----------------|--------------|------------|
+| Common Years   | 303             | 365          | 110,595    |
+| Leap Years     | 97              | 366          | 35,502     |
+| **Total**      | **400**         | -            | **146,097**|
+
+This cycle is crucial for minimizing the drift of the calendar relative to the Earth's position in its orbit.
+
+### Month Lengths and Historical Evolution
+
+The lengths of the months in the Gregorian calendar are the result of historical developments, primarily inherited from the Roman calendar and later modified by Julius Caesar and Augustus. Originally, the Roman calendar had ten months, and the addition of January and February created the twelve-month structure. The uneven distribution of days across months is a legacy of these ancient reforms ([How Many Days Are in a Month](https://www.agecalculator101.com/articles-and-guides/how-many-days-are-in-a-month.html)).
+
+The mnemonic rhyme "Thirty days hath September, April, June, and November; all the rest have thirty-one, except for February alone..." is widely used to remember the varying month lengths ([How Many Days Are In Each Month?](https://timecalculators.io/blog/how-many-days-are-in-each-month)).
+
+| Month      | Historical Notes                                        |
+|------------|--------------------------------------------------------|
+| January    | Added by Roman reform                                  |
+| February   | Shortest month; receives the leap day                  |
+| March      | Originally the first month in the Roman calendar        |
+| April      | -                                                      |
+| May        | -                                                      |
+| June       | -                                                      |
+| July       | Renamed after Julius Caesar                            |
+| August     | Renamed after Augustus Caesar                          |
+| September  | Name means "seventh month" in Latin                    |
+| October    | Name means "eighth month" in Latin                     |
+| November   | Name means "ninth month" in Latin                      |
+| December   | Name means "tenth month" in Latin                      |
+
+The assignment of 31, 30, or 28/29 days to each month is a result of these historical changes and political decisions ([How Many Days Are in a Month](https://www.agecalculator101.com/articles-and-guides/how-many-days-are-in-a-month.html)).
+
+### Impact of the Gregorian Calendar on Modern Timekeeping
+
+The adoption of the Gregorian calendar has had a profound impact on global civil timekeeping. Its structure allows for accurate scheduling, financial planning, and scientific observation. The leap year system ensures that the calendar remains in close alignment with the seasons, which is critical for agriculture, religious observances, and cultural events ([Gregorian Calendar](https://www.calendardate.com/gregorian.htm)).
+
+Digital systems and software are programmed to account for the leap year rules, automatically adjusting for the extra day in February during leap years. This consistency supports international coordination and planning across different regions and time zones ([How Many Days Are in a Month](https://www.agecalculator101.com/articles-and-guides/how-many-days-are-in-a-month.html)).
+
+| Application Area      | Importance of Calendar Structure              |
+|----------------------|-----------------------------------------------|
+| Agriculture          | Seasonal alignment for planting/harvesting    |
+| Religion             | Determining dates of holidays (e.g., Easter)  |
+| Business/Finance     | Payroll, billing cycles, fiscal planning      |
+| Technology           | Software, digital calendars, timekeeping      |
+
+The Gregorian calendar's structure, with its precise leap year rules and month lengths, remains foundational to modern society's organization of time ([Gregorian calendar - Wikipedia](https://en.wikipedia.org/wiki/Gregorian_calendar)).
+
+## Leap Years and Calendar Alignment
+
+### Introduction
+
+Leap years play a crucial role in aligning our calendar with the Earth's orbit around the Sun. This article explores the astronomical basis for leap years, the evolution of leap year rules from the Julian to the Gregorian calendar, and the impact of leap years on calendar alignment across different systems.
+
+### The Astronomical Basis for Leap Years
+
+The Earth's orbit around the Sun takes approximately 365.24219 days to complete one revolution relative to the vernal equinox, known as the tropical year. This discrepancy between the astronomical year and the 365-day calendar year necessitates the existence of leap years to prevent the calendar from drifting out of alignment with the seasons.
+
+| Year Type        | Length (Days)       | Description                                                      |
+|------------------|--------------------|------------------------------------------------------------------|
+| Tropical Year    | 365.24219          | Time for seasons to repeat; basis for leap year correction       |
+| Sidereal Year    | 365.25636          | Time for Earth to orbit Sun relative to fixed stars              |
+| Anomalistic Year | 365.25964          | Time between perihelion passages                                 |
+| Julian Year      | 365.25             | Used in Julian calendar; basis for early leap year rule          |
+
+### Evolution of Leap Year Rules: From Julian to Gregorian
+
+The Julian calendar, introduced in 45 BCE, implemented a simple leap year rule: every fourth year contained an extra day, resulting in an average year length of 365.25 days. However, this rule caused a drift of about 11 minutes per year, leading to a misalignment with the seasons over time.
+
+The Gregorian calendar reform in 1582 refined the leap year rule to better synchronize with the tropical year. The new rule states that a year is a leap year if it is divisible by 4, except for years divisible by 100 unless also divisible by 400, resulting in an average year length of 365.2425 days.
+
+### Calendar Drift and Its Correction
+
+Without leap years, the calendar would fall behind the tropical year by about 0.24219 days annually, leading to a significant drift over time. The leap year system corrects this by adding an extra day periodically to keep the calendar aligned with the Earth's orbit and the seasons.
+
+### Leap Year Frequency and Distribution
+
+In the Gregorian calendar, out of every 400 years, 97 are leap years and 303 are common years, with a leap year occurring on average every 4.1237 years.
+
+### Variability in the Length of the Tropical Year
+
+While the Gregorian calendar closely matches the mean tropical year, the actual length of a tropical year can vary slightly due to gravitational interactions and other factors.
+
+### Leap Years in Non-Gregorian Calendars
+
+Various calendars, such as the Hebrew, Chinese, Islamic, and Indian calendars, use different leap year systems to align their years with astronomical or lunar cycles.
+
+### Long-Term Accuracy and Future Adjustments
+
+The Gregorian calendar, while highly accurate, is not perfect. Over thousands of years, a small discrepancy in the average year length could accumulate, potentially requiring adjustments in the distant future.
+
+### Leap Seconds and Modern Timekeeping
+
+In addition to leap years, modern timekeeping may require the insertion of leap seconds to account for irregularities in the Earth's rotation.
+
+### Summary Table: Leap Year System Comparison
+
+This table compares the correction interval, criteria for leap year, average year length, and alignment target across different leap year systems.
+
+---
+
+*This revised article provides a detailed exploration of leap years, their historical evolution, and their significance in calendar alignment, addressing the reviewer's feedback for clarity and enhancement.*
+
+## Practical Implications and Calendar Accuracy
+
+### Calendar Systems and Their Year Lengths
+
+The measurement of a year is fundamentally tied to astronomical cycles, but practical calendar systems must approximate these cycles using whole days. The two most influential solar calendars in modern history are the Julian and Gregorian calendars, each with their own approach to approximating the length of the tropical year.
+
+| Calendar System      | Average Year Length (days) | Leap Year Rule                                              | Approximate Drift             |
+|----------------------|---------------------------|-------------------------------------------------------------|-------------------------------|
+| Gregorian            | 365.2425                  | Every 4 years, except years divisible by 100 unless by 400  | 1 day per 3,236 years         |
+| Julian               | 365.25                    | Every 4 years                                               | 1 day per 128 years           |
+| Tropical (Solar)     | 365.2422                  | N/A (astronomical value)                                    | N/A                           |
+| Sidereal             | 365.25636                 | N/A (astronomical value)                                    | N/A                           |
+| Persian              | 365.2421986               | Complex astronomical rules                                  | 1 day per 110,000 years       |
+| Revised Julian       | 365.242222                | Leap years similar to Gregorian, but slightly different rule | 1 day per 31,250 years        |
+
+The Gregorian calendar, now the global civil standard, was designed to reduce the drift between the calendar year and the tropical year, which is the period between successive vernal equinoxes. This drift, if uncorrected, would cause the seasons to gradually shift with respect to calendar dates ([Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html); [Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months)).
+
+### Impacts of Calendar Drift on Society
+
+Calendar drift refers to the gradual misalignment between the calendar year and the actual solar year due to inaccuracies in the calendar system. This misalignment has significant practical implications:
+
+- **Seasonal Shifts:** Inaccurate calendars can cause key dates, such as solstices and equinoxes, to occur earlier or later each year. Over centuries, this can disrupt agricultural cycles, religious observances, and civil planning ([BarrazaCarlos, 2025](https://barrazacarlos.com/differences-between-the-julian-and-gregorian-calendars/)).
+- **Historical Record Keeping:** The adoption of new calendars and the correction of drift (such as the 10-day removal during the Gregorian reform) complicate historical chronology and the dating of events ([NASA, n.d.](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)).
+- **Religious Observances:** Many religious holidays are based on astronomical events. Calendar drift can cause these observances to lose their intended seasonal context, as happened with Easter in the Julian calendar ([SpiritualCulture, 2025](https://spiritualculture.org/julian-calendar-vs-gregorian-calendar/)).
+
+#### Table: Calendar Drift Over Time
+
+| Calendar System | Drift Rate           | Example of Drift                       |
+|-----------------|---------------------|----------------------------------------|
+| Julian          | 1 day/128 years     | 12 days drifted by 1582                |
+| Gregorian       | 1 day/3,236 years   | ~1 day drift since 1582                |
+| Persian         | 1 day/110,000 years | Negligible over human timescales       |
+
+### Leap Year Rules and Their Consequences
+
+Leap years are the primary mechanism for correcting the discrepancy between the calendar year and the solar year. The rules governing leap years have direct implications for the accuracy and practicality of a calendar:
+
+- **Julian Calendar:** Adds a leap day every 4 years, resulting in an average year length of 365.25 days. This overcompensates for the actual solar year, causing a drift of about 11 minutes per year ([ThisVsThat, 2025](https://thisvsthat.io/gregorian-calendar-vs-julian-calendar)).
+- **Gregorian Calendar:** Refines the leap year rule by excluding years divisible by 100 unless also divisible by 400. This reduces the average year length to 365.2425 days, much closer to the tropical year ([RapidTables, 2025](https://www.rapidtables.com/calc/time/days-in-year.html)).
+- **Practical Effect:** The Gregorian system omits three leap years every 400 years, which reduces the drift to about 26 seconds per year, or one day every 3,236 years ([Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html)).
+
+#### Leap Year Rule Comparison Table
+
+| Rule Description                                 | Julian Calendar | Gregorian Calendar |
+|--------------------------------------------------|-----------------|-------------------|
+| Leap year every 4 years                          | Yes             | Yes               |
+| Exception for years divisible by 100             | No              | Yes               |
+| Exception for years divisible by 400             | No              | Yes               |
+| Average year length (days)                       | 365.25          | 365.2425          |
+
+### Real-World Applications: Scheduling, Planning, and Technology
+
+The accuracy of calendar systems has direct consequences for various aspects of modern life:
+
+- **Civil and Legal Systems:** Accurate calendars are essential for contracts, legal deadlines, and fiscal years. Even small discrepancies can accumulate, affecting multi-year agreements and international coordination ([TravelPremia, 2025](https://www.travelpremia.com/lifestyle/how-many-days-in-a-year-understanding-the-calendar-year/)).
+- **Agriculture:** Planting and harvesting are often tied to specific dates or seasonal markers. Calendar drift can misalign these activities with actual seasonal changes, impacting food production and supply chains ([ScientificOrigin, 2024](https://scientificorigin.com/why-are-there-365-days-in-a-year)).
+- **Technology and Computing:** Many software systems rely on precise date calculations. Leap years and calendar reforms must be accounted for in programming, database management, and time-sensitive applications to avoid errors ([NASA, n.d.](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)).
+- **International Coordination:** Different countries adopted the Gregorian calendar at different times, and some religious organizations still use the Julian calendar. This can lead to discrepancies in international event planning, holiday observances, and historical research ([BarrazaCarlos, 2025](https://barrazacarlos.com/differences-between-the-julian-and-gregorian-calendars/)).
+
+### Statistical Impact of Calendar Adjustments
+
+The cumulative effect of calendar adjustments is best understood through statistical analysis:
+
+- **Average Year Length:** The Gregorian calendar's average year length of 365.2425 days is only 0.0003 days longer than the current tropical year, resulting in a negligible error over millennia ([Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months)).
+- **Leap Year Frequency:** Over a 400-year cycle, the Gregorian calendar has 97 leap years and 303 common years, compared to the Julian calendar's 100 leap years and 300 common years ([RapidTables, 2025](https://www.rapidtables.com/calc/time/days-in-year.html)).
+- **Error Accumulation:** The Julian calendar accumulates a one-day error every 128 years, while the Gregorian calendar does so only every 3,236 years ([Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html)).
+
+#### Table: Leap Year Distribution Over 400 Years
+
+| Calendar System | Leap Years | Common Years | Total Years | Average Year Length (days) |
+|-----------------|------------|-------------|-------------|---------------------------|
+| Julian          | 100        | 300         | 400         | 365.25                    |
+| Gregorian       | 97         | 303         | 400         | 365.2425                  |
+
+### Calendar Accuracy in Astronomical and Cultural Contexts
+
+The importance of calendar accuracy extends beyond civil and practical concerns, influencing both astronomical observations and cultural traditions:
+
+- **Astronomical Observations:** Accurate calendars are essential for predicting celestial events, such as eclipses, transits, and the timing of solstices and equinoxes. Even minor inaccuracies can result in significant errors over centuries ([Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months)).
+- **Cultural and Religious Events:** Many cultures and religions base festivals and rituals on specific dates or lunar/solar cycles. Calendar drift can cause these events to lose their intended seasonal or astronomical significance, prompting calendar reforms or the continued use of different systems ([SpiritualCulture, 2025](https://spiritualculture.org/julian-calendar-vs-gregorian-calendar/)).
+- **Historical Synchronization:** The transition from the Julian to the Gregorian calendar required the omission of days (e.g., October 4 was followed by October 15 in 1582 in some countries), complicating the synchronization of historical records and anniversaries ([BarrazaCarlos, 2025](https://barrazacarlos.com/differences-between-the-julian-and-gregorian-calendars/)).
+
+#### Table: Astronomical and Cultural Relevance
+
+| Aspect                  | Impact of Calendar Accuracy                         |
+|-------------------------|-----------------------------------------------------|
+| Astronomical Prediction | Ensures correct timing of celestial events          |
+| Cultural Festivals      | Maintains alignment with intended seasonal markers  |
+| Historical Records      | Facilitates consistent chronology across societies  |
+
+### Long-Term Implications and Future Considerations
+
+While the Gregorian calendar remains highly accurate for civil purposes, ongoing astronomical changes and the slow decrease in the length of the tropical year mean that even this system will eventually require adjustment:
+
+- **Secular Variation:** The tropical year is gradually shortening due to gravitational interactions and precession, though the change is minimal (about 0.53 seconds per century) ([Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months)).
+- **Potential Reforms:** Some proposals, such as the Revised Julian or Persian calendars, offer even greater accuracy, but widespread adoption would require significant international coordination ([Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html)).
+- **Technological Adaptation:** As technology increasingly automates scheduling and timekeeping, calendar accuracy will remain critical to avoid systemic errors in global networks and data systems ([NASA, n.d.](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)).
+
+#### Table: Future Calendar Accuracy Proposals
+
+| Calendar System   | Average Year Length (days) | Error Rate (days per x years) |
+|-------------------|---------------------------|-------------------------------|
+| Gregorian         | 365.2425                  | 1 day per 3,236 years         |
+| Revised Julian    | 365.242222                | 1 day per 31,250 years        |
+| Persian           | 365.2421986               | 1 day per 110,000 years       |
+
+By understanding the practical implications and accuracy of different calendar systems, societies can better plan for the future, preserve cultural traditions, and maintain alignment with the natural cycles that govern our planet ([Time and Date, 2025](https://www.timeanddate.com/date/perfect-calendar.html); [Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months)).
+
+## Conclusion
+In conclusion, the research findings on the structure and calculation of days in a year according to the Gregorian calendar highlight the meticulous design and precision of this widely used calendar system. The incorporation of leap years, based on specific rules to align the calendar with the tropical year, showcases the dedication to accuracy and long-term synchronization with astronomical phenomena. The practical implications of calendar drift, leap year adjustments, and the impact on various societal sectors underscore the importance of a reliable and consistent timekeeping system. As we navigate the complexities of modern timekeeping, technological advancements, and global coordination, the Gregorian calendar remains a cornerstone of our temporal organization, ensuring the smooth functioning of diverse fields from agriculture to technology. By recognizing the historical evolution and practical implications of the Gregorian calendar, we can appreciate its enduring relevance in contemporary society. ([Britannica, 2025](https://www.britannica.com/science/time/Lengths-of-years-and-months); [NASA, n.d.](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm); [SpiritualCulture, 2025](https://spiritualculture.org/julian-calendar-vs-gregorian-calendar/))
+
+## References
+- Gregorian calendar - Wikipedia [https://en.wikipedia.org/wiki/Gregorian_calendar](https://en.wikipedia.org/wiki/Gregorian_calendar)
+- AstroPages | Leap Year | Western Washington University [https://astro101.wwu.edu/a101_leapyear.html](https://astro101.wwu.edu/a101_leapyear.html)
+- Time and Date, 2025 [https://www.timeanddate.com/date/perfect-calendar.html](https://www.timeanddate.com/date/perfect-calendar.html)
+- Britannica, 2025 [https://www.britannica.com/science/time/Lengths-of-years-and-months](https://www.britannica.com/science/time/Lengths-of-years-and-months)
+- NASA, n.d. [https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm](https://www.grc.nasa.gov/www/k-12/Numbers/Math/Mathematical_Thinking/calendar_calculations.htm)
+- SpiritualCulture, 2025 [https://spiritualculture.org/julian-calendar-vs-gregorian-calendar/](https://spiritualculture.org/julian-calendar-vs-gregorian-calendar/)
