@@ -53,6 +53,7 @@ The backend is built using:
 ## Flow Diagram
 
 The flow diagram illustrating the agent interactions and workflow is located at `./src/flow_diagram.png`. It visually represents the sequence of tasks, from query submission to report publication, including conditional paths for human feedback and revisions.
+![Agent Flow Diagram](./src/flow_diagram.png)
 
 ## Setup Instructions
 
